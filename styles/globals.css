@@ -15,9 +15,16 @@ a {
 }
 
 
+
 @font-face {
   font-family: 'bungee';
   src: url('../public/BungeeShade-Regular.ttf');
+}
+
+@layer base{
+  h1{
+    @apply text-5xl;
+  }
 }
 
 /* @keyframes borderGlow{

@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         bungee: 'bungee',
       },
+
       keyframes: {
         opacity: {
           '0%': { opacity: 0 },
@@ -38,7 +39,8 @@ module.exports = {
         slideRight: 'slideRight 1200ms ease 0ms',
       },
       colors: {
-        myblue: '#A0C3D2',
+        mydarkblue: '#02103A',
+        mylightblue: '#8DB7CE',
         mypink: '#EAC7C7',
         mylight: '#F7F5EB',
         myskin: '#EAE0DA',

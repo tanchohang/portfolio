@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import profile from '../public/profile1.jpg';
 
@@ -11,10 +11,31 @@ import Intro from '../components/intro';
 import Scroll from '../components/scroll/Scroll';
 import Loading from '../components/loading/Loading';
 import Card from '../components/card/Card';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isShowMore, setIsShowMore] = useState(false);
+
+  const rootObserver = useRef(null);
+
+  const [containerRef1, isVisible1] = useIntersectionObserver({
+    root: rootObserver.current,
+    rootMargin: '0px',
+    threshold: 0.7,
+  });
+
+  // const [containerRef2, isVisible2] = useIntersectionObserver({
+  //   root: rootObserver.current,
+  //   rootMargin: '900px',
+  //   threshold: 0.1,
+  // });
+
+  // const [containerRef3, isVisible3] = useIntersectionObserver({
+  //   root: rootObserver.current,
+  //   rootMargin: '0px',
+  //   threshold: 1,
+  // });
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,7 +62,6 @@ export default function Home() {
           <section className="h-[100vh] w-[50vw] bg-mylightblue fixed hidden md:block">
             <Intro />
           </section>
-
           <section className="md:w-[50vw]  md:absolute md:right-0">
             <section className="h-[100vh] bg-mylightblue sticky top-0 md:hidden ">
               <Intro />
@@ -62,14 +82,37 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="h-[100vh] sticky top-0 bg-mypallate1 text-mylight font-sans">
+            <section
+              className="h-[100vh] sticky top-0 bg-mypallate1 text-mylight font-sans"
+              ref={rootObserver}
+            >
               <h2 className=" text-2xl text-center p-10">
                 Projects I&apos;ve Built
               </h2>
               <div className="flex flex-col items-center gap-5 h-[80vh]">
+                <div
+                  className={
+                    isVisible1 ? 'visible animate-slideRight' : 'visible'
+                  }
+                >
+                  <Card />
+                </div>
+                <div
+                // ref={containerRef2}
+                // className={
+                //   isVisible2 ? 'visible animate-slideRight' : 'invisible'
+                // }
+                >
+                  <Card />
+                </div>
+                {/* <div
+                  ref={containerRef3}
+                  className={
+                    isVisible3 ? 'visible animate-slideRight' : 'invisible'
+                  }
+                > */}
                 <Card />
-                <Card />
-                <Card />
+                {/* </div> */}
               </div>
             </section>
 

@@ -28,7 +28,7 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
         slideRight: {
-          '0%': { transform: 'translateX(200%)' },
+          '0%': { transform: 'translateX(20%)' },
 
           '100%': { transform: 'translateX(0)' },
         },

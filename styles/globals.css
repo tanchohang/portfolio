@@ -3,7 +3,6 @@
 @tailwind utilities;
 /* @import './Home.module.css'; */
 
-
 html,
 body {
   max-width: 100vw;
@@ -15,64 +14,54 @@ a {
   text-decoration: none;
 }
 
-
-
 @font-face {
   font-family: 'bungee';
   src: url('../public/BungeeShade-Regular.ttf');
 }
 
-
-@layer utilities{
-  .shadow-rb{
+@layer utilities {
+  .shadow-rb {
     box-shadow: 5px 5px 0px black;
   }
-  
 }
 
-
-
-#circle{
-stroke:rgb(255, 255, 119) ;
-stroke-width: 10px;
- stroke-dasharray:700;
- stroke-dashoffset: 0;
- animation: draw 4s ease;
+#circle {
+  stroke: rgb(255, 255, 119);
+  strokewidth: 10px;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 0;
+  animation: draw 4s ease;
 }
 
-#line{
-  stroke:rgb(253, 149, 167) ;
-stroke-width: 10px;
+#line {
+  stroke: rgb(253, 149, 167);
+  strokewidth: 10px;
   stroke-dasharray: 500;
   stroke-dashoffset: 0;
   animation: draw 4s linear;
- }
- #an path{
+}
+#an path {
   stroke: red;
   fill: red;
-  stroke-dasharray: 200; 
+  stroke-dasharray: 200;
   stroke-dashoffset: 200;
-
- }
-
- /* #t path{ */
-  /* stroke: white; */
-  /* fill: transparent; */
-  /* stroke-width: 1; */
-  /* stroke-dasharray: 250;  */
-  /* stroke-dashoffset: 300; */
-  /* animation: draw 3s 1s linear infinite; */
-
-  
- /* } */
-
-
-@keyframes draw{
-from{stroke-dashoffset: 700;}
-to{stroke-dashoffset: 0;}
 }
 
+/* #t path{ */
+/* stroke: white; */
+/* fill: transparent; */
+/* strokeWidth: 1; */
+/* stroke-dasharray: 250;  */
+/* stroke-dashoffset: 300; */
+/* animation: draw 3s 1s linear infinite; */
 
+/* } */
 
-
-
+@keyframes draw {
+  from {
+    stroke-dashoffset: 700;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

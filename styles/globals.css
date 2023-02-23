@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import './Home.module.css'; */
 
 html,
 body {
@@ -27,7 +26,7 @@ a {
 
 #circle {
   stroke: rgb(255, 255, 119);
-  strokewidth: 10px;
+  stroke-width: 10px;
   stroke-dasharray: 700;
   stroke-dashoffset: 0;
   animation: draw 4s ease;
@@ -35,7 +34,7 @@ a {
 
 #line {
   stroke: rgb(253, 149, 167);
-  strokewidth: 10px;
+  stroke-width: 10px;
   stroke-dasharray: 500;
   stroke-dashoffset: 0;
   animation: draw 4s linear;

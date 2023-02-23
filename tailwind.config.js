@@ -3,6 +3,7 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   darkMode: 'class',
   content: [
+    './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
@@ -85,29 +86,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    // plugin(
-    //   ({ matchUtilities, theme }) => {
-    //     matchUtilities(
-    //       {
-    //         '.shadow-rb': (value) => {
-    //           return {
-    //             boxShadow: value,
-    //           };
-    //         },
-    //       },
-    //       {
-    //         values: theme('boxShadow'),
-    //       }
-    //     );
-    //   },
-    //   {
-    //     theme: {
-    //       boxShadow: {
-    //         10: '10px,10px',
-    //       },
-    //     },
-    //   }
-    // ),
-  ],
+  plugins: [],
 };

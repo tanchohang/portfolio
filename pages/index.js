@@ -10,6 +10,8 @@ import Image from 'next/image';
 import Intro from '../components/intro';
 import Loading from '../components/loading/Loading';
 import Card from '../components/card/Card';
+import Scroll from '../components/scroll/Scroll';
+
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Home() {
@@ -64,17 +66,15 @@ export default function Home() {
           <section className="md:w-[50vw]  md:absolute md:right-0">
             <section className="h-[100vh] bg-mylightblue sticky top-0 md:hidden ">
               <Intro />
-              <div className=""></div>
+              <div className="">
+                <Scroll />
+              </div>
             </section>
 
             <section className="h-[100vh] sticky top-0 bg-[url('/profile1.jpg')] bg-cover bg-top bg-blend-multiply bg-mypurple ">
-              {/* <Image
-              src={profile}
-              alt="profile"
-              fill
-              className=" object-cover object-top hue-rotate-180"
-            /> */}
-              <div className="hidden md:block"></div>
+              <div className="hidden md:block">
+                <Scroll />
+              </div>
             </section>
 
             <section

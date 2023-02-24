@@ -20,5 +20,15 @@ EXPOSE 80
 EXPOSE 443
 
 
+
+
 # Launch NGINX
 CMD [ "nginx", "-g", "daemon off;" ]
+
+#ENTRYPOINT nginx && certbot --nginx -n --agree-tos -d tanchohang.dev -d www.tanchohang.dev -m tanchohang@gmail.com && (crontab -l ; echo "0 12 * * * /usr/bin/certbot renew --quiet")| crontab -
+
+
+# ENTRYPOINT [ "nginx" ]
+
+#Certbot configuration
+# RUN certbot --nginx -n --agree-tos -d tanchohang.dev -d www.tanchohang.dev -m tanchohang@gmail.com

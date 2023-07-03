@@ -46,16 +46,6 @@ a {
   stroke-dashoffset: 200;
 }
 
-/* #t path{ */
-/* stroke: white; */
-/* fill: transparent; */
-/* strokeWidth: 1; */
-/* stroke-dasharray: 250;  */
-/* stroke-dashoffset: 300; */
-/* animation: draw 3s 1s linear infinite; */
-
-/* } */
-
 @keyframes draw {
   from {
     stroke-dashoffset: 700;

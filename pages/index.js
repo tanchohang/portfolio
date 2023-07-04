@@ -38,6 +38,11 @@ export default function Home() {
       description: 'A Tailwind based React Component Library',
       tags: ['Javascript', 'Tailwind', 'Reactjs', 'Storybook'],
     },
+    {
+      title: 'Restaurant Management system',
+      description: 'This system was built as my final year project for my undergraduate project. Built on Firebase and Angular',
+      tags: ['Javascript', 'Angular', 'Bootstrap', 'Firebase'],
+    },
   ];
 
   const [isLoading, setIsLoading] = useState(true);

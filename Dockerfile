@@ -9,13 +9,13 @@ WORKDIR /usr/app
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN yarn install
 
 # Copy all files
 COPY ./ ./
 
 # Build app
-RUN npm run build
+RUN yarn build
 
 
 # Run container as non-root (unprivileged) user
@@ -23,4 +23,4 @@ RUN npm run build
 USER node
 
 # Run npm start script with PM2 when container starts
-CMD ["npm", "start" ]
+CMD ["yarn", "dev" ]

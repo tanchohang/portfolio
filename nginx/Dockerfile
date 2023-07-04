@@ -1,36 +1,43 @@
+FROM node:alpine AS build
+
+RUN addgroup --gid 1001 appuser \
+    && adduser --uid 1001 --ingroup appuser --home /app --shell /bin/sh --disabled-password appuser
+
+# Set working directory
+WORKDIR /usr/app
+RUN chown -R appuser:appuser /usr/app
+
+COPY package.*  ./
+RUN chown appuser:appuser package.*
+
+USER appuser
+
+
+# Install dependencies
+RUN npm i
+
+USER root
+
+# Copy all files
+COPY . .
+
+RUN chown -R appuser:appuser .
+
+# Build app
+RUN npm run build \
+    && chown -R appuser:appuser .
+
+RUN apk add python3 python3-dev py3-pip build-base libressl-dev musl-dev libffi-dev rust cargo
+RUN pip3 install pip --upgrade
+RUN pip3 install certbot-nginx
+RUN mkdir /etc/letsencrypt
+
+
+
 # Base on offical NGINX Alpine image
-FROM nginx:alpine
-
-#Install certbot dependencies
-# RUN apk add python3 python3-dev py3-pip build-base libressl-dev musl-dev libffi-dev rust cargo
-# RUN pip3 install pip --upgrade
-# RUN pip3 install certbot-nginx
-# RUN mkdir /etc/letsencrypt
-
-# Remove any existing config files
-RUN rm /etc/nginx/conf.d/*
-
+FROM nginx
 
 # Copy config files
-# *.conf files in conf.d/ dir get included in main config
-COPY ./default.conf /etc/nginx/conf.d/
-# COPY ./letsencrypt/ /etc/letsencrypt/
-
-
-# Expose the listening port
-EXPOSE 80
-EXPOSE 443
-
-
-
-
-# Launch NGINX
-CMD [ "nginx", "-g", "daemon off;" ]
-
-#ENTRYPOINT nginx && certbot --nginx -n --agree-tos -d tanchohang.dev -d www.tanchohang.dev -m tanchohang@gmail.com && (crontab -l ; echo "0 12 * * * /usr/bin/certbot renew --quiet")| crontab -
-
-
-# ENTRYPOINT [ "nginx" ]
-
-#Certbot configuration
-# RUN certbot --nginx -n --agree-tos -d tanchohang.dev -d www.tanchohang.dev -m tanchohang@gmail.com
+COPY --from=build /usr/app/out /usr/share/nginx/html
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+COPY ./letsencrypt/ /etc/letsencrypt/

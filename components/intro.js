@@ -19,7 +19,7 @@ export default function Intro() {
           <a className=" outline rounded-sm py-3 px-10 mr-5 hover:bg-mydarkgreen hover:text-mylight" href="mailto:tanchohang@gmail.com">
             Contact me!
           </a>
-          <a className=" outline rounded-sm py-3 px-10 hover:bg-mydarkgreen hover:text-mylight" href="/tanchohang-CV.pdf" download>
+          <a className=" outline rounded-sm py-3 px-10 hover:bg-mydarkgreen hover:text-mylight" href="/resume.pdf" download>
             Resume
           </a>
         </div>

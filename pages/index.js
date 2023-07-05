@@ -40,13 +40,13 @@ export default function Home() {
         { type: 'web', url: 'https://skyvault.tanchohang.dev' },
       ],
     },
-    {
-      title: 'Skyvault: A Photos Storage and Sharing App',
-      description: `Skyvault lets users upload their photos and share it. Specifically built as a mini mock of cloud storage for use in personal
-      projects. The backend is built on NodeJS and NextJS is used for the frontend.`,
-      tags: ['Javascript', 'Next.js', 'NestJS', 'MongoDB', 'TailwindCSS'],
-      links: [{ type: 'github', url: 'https://github.com/' }],
-    },
+    // {
+    //   title: 'Skyvault: A Photos Storage and Sharing App',
+    //   description: `Skyvault lets users upload their photos and share it. Specifically built as a mini mock of cloud storage for use in personal
+    //   projects. The backend is built on NodeJS and NextJS is used for the frontend.`,
+    //   tags: ['Javascript', 'Next.js', 'NestJS', 'MongoDB', 'TailwindCSS'],
+    //   links: [{ type: 'github', url: 'https://github.com/' }],
+    // },
   ];
   const projects = [
     {

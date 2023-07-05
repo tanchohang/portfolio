@@ -186,7 +186,7 @@ export default function Home() {
                   );
                 })}
               </div>
-              {isShowMore && (
+              {/* {isShowMore && (
                 <div className="flex flex-wrap justify-center gap-8 mt-8">
                   {Array.from(Array(2)).map((_, i) => {
                     return (
@@ -206,9 +206,9 @@ export default function Home() {
                     );
                   })}
                 </div>
-              )}
+              )} */}
 
-              <div className="my-10 text-center">
+              {/* <div className="my-10 text-center">
                 {isShowMore ? (
                   <button className="outline rounded-sm py-3 px-10 hover:bg-mydarkgreen hover:text-mylight" onClick={() => setIsShowMore(false)}>
                     Show less
@@ -218,7 +218,7 @@ export default function Home() {
                     Show more
                   </button>
                 )}
-              </div>
+              </div> */}
             </section>
             <section className="h-[70vh] sticky shadow-white shadow-2xl bg-mypallate1 text-mylight">
               <div className="flex gap-2 justify-center items-center h-full">
